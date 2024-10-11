@@ -17,20 +17,24 @@
         <div class= "mt-4">
             <form onsubmit="postMovie()">
                 <div class="mb-3">
+                    <label for="inputMainID" class="form-label">ID</label>
+                    <input type="text" id="inputMainID" class="form-control" >
+                </div>
+                <div class="mb-3">
                     <label for="inputTitle" class="form-label">Title</label>
-                    <input type="text" id="inputTitle" class="form-control" required>
+                    <input type="text" id="inputTitle" class="form-control" >
                 </div>
                 <div class="mb-3">
                     <label for="inputGenre" class="form-label">Genre</label>
-                    <input type="text" id="inputGenre" class="form-control" required>
+                    <input type="text" id="inputGenre" class="form-control" >
                 </div>
                 <div class="mb-3">
                     <label for="inputYear" class="form-label">Release Year</label>
-                    <input type="date" id="inputYear" class="form-control" required>
+                    <input type="date" id="inputYear" class="form-control" >
                 </div>
                 <div class="mb-3">
                     <label for="inputAvailability" class="form-label">Available For Rent</label>
-                    <select type="tel" id="inputAvailability" class="form-control" required>
+                    <select type="tel" id="inputAvailability" class="form-control" >
                         <option value="true">Available</option>
                         <option value="false">Not Available</option>
                     </select>
@@ -39,6 +43,51 @@
             </form>
         </div>
 
+        <div id="movieModal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Movies</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  
+                    <form>
+                        <div class="mb-3">
+                            <label for="inputID" class="form-label">ID</label>
+                            <input type="text" id="inputID" class="form-control" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputTitle2" class="form-label">Title</label>
+                            <input type="text" id="inputTitle2" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputGenre2" class="form-label">Genre</label>
+                            <input type="text" id="inputGenre2" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputYear2" class="form-label">Release Year</label>
+                            <input type="date" id="inputYear2" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputAvailability2" class="form-label">Available For Rent</label>
+                            <select type="tel" id="inputAvailability2" class="form-control" required>
+                                <option value="true">Available</option>
+                                <option value="false">Not Available</option>
+                            </select>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button onclick="patchMovie()" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
 
 
         <div>
