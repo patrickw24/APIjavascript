@@ -44,7 +44,7 @@ function renderTable(data) {
 
 async function postMovie() {
   event.preventDefault();
-
+    
   let title = inputTitle.value;
   let genre = inputGenre.value;
   let releaseYear = inputYear.value;
@@ -67,9 +67,15 @@ async function postMovie() {
     body: JSON.stringify(movieData),
   });
 
-  if (response.status >= 200 && response.status <= 299) {
+  if (response.ok) {
     getMovies();
     console.log("Your movie has been added");
+    
+    inputTitle.value= ""
+    inputGenre.value= ""
+    inputYear.value= ""
+    inputAvailability.value= ""
+
   } else {
     console.log("Your movie was not added");
     console.log(response.statusText);
